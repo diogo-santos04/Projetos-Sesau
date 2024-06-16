@@ -1,0 +1,4 @@
+<button  class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Oitiva"  wire:click="$emit('openModalCrudTab', <?php echo e($model); ?>)">Oitiva</button>
+<button  class="btn btn-success" data-bs-toggle="modal" data-bs-target="#SindicanciaMembro"  wire:click="$emit('openModalCrudTab', <?php echo e($model); ?>)">Membros</button>
+<button  class="btn btn-success" data-bs-toggle="modal" data-bs-target="#SindicanciaPessoa"  wire:click="$emit('openModalCrudTab', <?php echo e($model); ?>)">Pessoas</button>
+<?php /**PATH C:\katiane\sesau\resources\views/livewire/admin/sesau/juridico/sindicancia/table/action.blade.php ENDPATH**/ ?>

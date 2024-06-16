@@ -1,0 +1,1 @@
+<button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Colaborador"  wire:click="$emit('openModalCrudTab', <?php echo e($model); ?>, 'admin.sesau.voluntario.colaborador.form')"><i class="fas fa-address-book"></i> Colaborador</button><?php /**PATH C:\diogo\sesau1\resources\views/livewire/admin/sesau/voluntario/colaborador/table/actions.blade.php ENDPATH**/ ?>

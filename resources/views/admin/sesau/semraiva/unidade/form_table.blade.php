@@ -1,0 +1,1 @@
+<livewire:admin.crud.crud-component  key="{{Str::random(5)}}" formType="form" modal="Unidade" title="Unidade" model="App\Models\Admin\Sesau\Semraiva\Unidade" form="admin.sesau.semraiva.unidade.form_unidade" />

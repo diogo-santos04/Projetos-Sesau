@@ -1,0 +1,101 @@
+---COMANDOS BASE (EXEMPLOS) ---
+php artisan make:model Post -m (criar model)
+php artisan migrate (criar migrate)
+php artisan migrate:refresh
+php artisan make:livewire PostComponent (criar component)
+php artisan make:model 
+
+---CRIANDO MODEL--- 
+php artisan make:model Admin/Sesau/Semraiva/Paciente -m
+php artisan make:model Admin/Sesau/Semraiva/Ficha -m
+php artisan make:model Admin/Sesau/Semraiva/NotificacaoIndividual -m
+
+---SEM RAIVA---
+php artisan make:livewire Admin/Sesau/Semraiva/SemraivaComponent
+
+---DADOS DE RESIDENCIA---
+php artisan make:livewire Admin/Sesau/Semraiva/DadoResidenciaComponent
+php artisan make:model Admin/Sesau/Semraiva/DadoResidencia -m
+
+---TRATAMENTO ATUAL---
+php artisan make:livewire Admin/Sesau/Semraiva/TratamentoAtualComponent
+php artisan make:model Admin/Sesau/Semraiva/TratamentoAtual -m
+
+---INVESTIGADOR---
+php artisan make:livewire Admin/Sesau/Semraiva/InvestigadorComponent
+php artisan make:model Admin/Sesau/Semraiva/Investigador -m
+
+---UNIDADE---
+php artisan make:livewire Admin/Sesau/Semraiva/UnidadeComponent
+php artisan make:model Admin/Sesau/Semraiva/Unidade -m
+
+---CARDS---
+php artisan make:livewire Admin/Sesau/Semraiva/CardComponent
+
+---MODAL---
+Sempre adicionar "wire:ignore.self"
+php artisan make:livewire Admin/Sesau/Semraiva/ModalComponent
+
+---DISTRITO--- 
+php artisan make:livewire Admin/Sesau/Semraiva/DistritoComponent
+php artisan make:model Admin/Sesau/Semraiva/Distrito -m
+
+
+---LISTENERS EXEMPLOS---
+Chamar na blade => <button wire:click="$emit('postAdded')">
+No component => $this->emit('postAdded');
+
+Sintaxe no component =>  protected $listeners = ['postAdded' => 'Nome   da funcao que sera disparada'];
+
+Passagem de parametros => $this->emit('postAdded', $post->id);
+
+Emitir evento para outro component => $this->emitTo('counter', 'postAdded');
+                ...                => <button wire:click="$emitTo('counter', 'postAdded')"> 
+
+Emitir evento no proprio component => $this->emitSelf('postAdded');
+               ...                 => <button wire:click="$emitSelf('postAdded')">
+
+---PROJETO VOLUNTARIO---
+php artisan make:model Admin/Sesau/Voluntario/Instituicao -m
+php artisan make:model Admin/Sesau/Voluntario/TipoAtividade -m
+php artisan make:model Admin/Sesau/Voluntario/TipoSeguimento -m
+php artisan make:model Admin/Sesau/Voluntario/TipoRegiaoUrbana -m
+php artisan make:model Admin/Sesau/Voluntario/Colaborador -m
+
+php artisan make:livewire Admin/Sesau/Voluntario/VoluntarioComponent
+php artisan make:table Admin/Sesau/Voluntario/TipoTableComponent 
+
+php artisan make:livewire Admin/Sesau/Voluntario/SelectComponent
+-- Passar de parametro: model, label, columnName, columnId(option), column(coluna que ira retornar)
+
+php artisan make:livewire Admin/Sesau/Voluntario/DropdownComponent
+
+---------EXEMPLO SALVAR CARACTERES DE FORMA ESPECIFICA-------
+'name' = ucfirst(objeto->name)as df As df
+ucwords(objeto->name) as df   As Df
+---------------------------------------------
+
+-----ARRUMAR VOLUNTARIO-----
+INSTITUICAO
+
+MSG= Algo deu errado!! alterar para a cor para error... 
+*URL - não esta salndo...
+
+NOME SOCIAL = MAISCULO
+NOME FANTASIA = MAISCULO
+SIGLA = MAISCULO
+CONTATO = MAISCULO
+
+
+COLABORADOR
+EMAIL - NÃO É OBRIGATORIO
+LINHA - Telefone / Celular / DataInicial - TAMANHO 12
+
+CARD
+- ESCONDER O CARD COLABORADOR
+
+TIPO - CARD
+- NOME - MAISCULO
+- DELETAR E EDITAR - NAO TA FUNCIONANDO...
+------------------------------------
+
