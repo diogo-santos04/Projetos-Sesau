@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'instituicao'=>[
+            'nome'=>'Nome',
+            'descricao'=>'descricao',
+            'nome_fantasia'=>'nome_fantasia',
+            'razao_social'=>'razao_social',
+            'cnpj'=>'cnpj',
+            'telefone'=>'telefone',
+            'fone_contato'=>'fone_contato',
+            'email'=>'email',
+            'sigla'=>'sigla',
+            'cep'=>'cep',
+            'endereco'=>'endereco',
+            'numero'=>'numero',
+            'uf'=>'uf',
+            'bairro'=>'bairro',
+            'cidade'=>'cidade',
+            'complemento'=>'complemento',
+            'classificacao'=>'classificacao',
+            'risco'=>'risco',
+            'prioridade'=>'prioridade',
+            'complexidade'=>'complexidade',
+            'situacao'=>'situacao',
+            'cv'=>'cv',
+            'pe'=>'pe',
+            'url'=>'url',
+            'status'=>'status',
+    ]
+];

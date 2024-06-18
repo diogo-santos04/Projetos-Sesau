@@ -36,5 +36,4 @@ class CrudTableComponent extends TableComponent
             ];
         }
     }
-
 }

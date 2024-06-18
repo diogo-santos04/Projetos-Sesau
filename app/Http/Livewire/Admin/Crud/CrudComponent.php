@@ -23,9 +23,7 @@ class CrudComponent extends Component
 
     public function mount($formType, $title, $model, $form)
     {
-        // dd("mount");
        $this->formType = $formType;
-        //    $this->modal = $modal;
        $this->title = $title;
        $this->model = $model;
        $this->form = $form;

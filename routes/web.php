@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\InstituicaoController;
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers\Controller;
+use app\Http\Livewire\Admin\Crudtab\CrudTableComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +44,9 @@ Route::get('/voluntario', function () {
 Route::get('/juridico', function () {
     return view('admin.sesau.juridico.juridicos.index');
 });
+
+Route::get('/residencia', function () {
+    return view('admin.sesau.residencia.index');
+});
+
+Route::post('instituicao/export-excel', [InstituicaoController::class, 'exportExcel'])->name('instituicao.download-excel');

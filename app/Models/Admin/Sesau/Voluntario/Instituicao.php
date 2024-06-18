@@ -5,6 +5,7 @@ namespace App\Models\Admin\Sesau\Voluntario;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Kdion4891\LaravelLivewireTables\Column;
+// use Maatwebsite\Excel\Concerns\FromCollection;
 
 
 class Instituicao extends Model

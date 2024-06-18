@@ -5,9 +5,9 @@
     <button  class="btn btn-danger"  wire:click="$emit('openDeleteFormCrud', {{$model}},  '{{$form}}')"><i class="fas fa-times"></i> Remover</button>
     <button  class="btn btn-success"  wire:click="$emit('openEditFormCrud', {{$model}},  '{{$form}}')"><i class="fas fa-edit"></i> Editar</button>
     <button  class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#{{$modalId}}" wire:click="$emit('openViewFormCrud', {{$model}}, '{{$form}}')"><i class="fas fa-eye"></i> Visualizar</button>
-    <button  class="btn btn-info"><i class="fas fa-print"></i> Imprimir</button>
+    <button  class="btn btn-info" wire:model="data." wire:click='{{route('instituicao.download-excel')}}' method="POST"><i class="fas fa-print"></i> Imprimir</button>
     @endif
-
+    
 @if($formType == 'modal')
     <button  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#{{$modal}}" wire:click="$emit('openDeleteFormCrud', {{$model}})"><i class="fas fa-times"></i> Remover</button>
     <button  class="btn btn-success" data-bs-toggle="modal" data-bs-target="#{{$modal}}"  wire:click="$emit('openEditFormCrud', {{$model}})"><i class="fas fa-edit"></i> Editar{{$modal}}</button>

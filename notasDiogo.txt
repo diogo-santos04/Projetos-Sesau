@@ -99,3 +99,30 @@ TIPO - CARD
 - DELETAR E EDITAR - NAO TA FUNCIONANDO...
 ------------------------------------
 
+-----------PROJETO RESIDENCIA--------
+php artisan make:livewire Admin/Sesau/Residencia/FormularioComponent
+php artisan make:model Admin/Sesau/Residencia/Formulario -m
+
+<div class="form-floating mb-3 col-12">
+        <h6 class="form-floating mb-3 col-3">32 - Solicitação de Isenção de Inscrição</h6>
+        <div class="row form-check form-switch">
+            <div class="mb-3">
+                <label for="solicitacao_isencao" class="form-check-label">Solicitar</label>
+                <input type="checkbox" wire:model.prevent="data.solicitacao_isencao" id="status"
+                    class="form-check-input">
+                @error('status')
+                    <span class="error">{{ $message }}</span>
+                @enderror
+            </div>
+        </div>
+        @if (isset($data['solicitacao_isencao']))
+            <div class="form-floating m-1 col-12">
+                <input type="file" wire:model="data.documento_solicitacao_isencao" class="form-control-file">
+                @error('data.documento_solicitacao_isencao')
+                    <span class="error">{{ $message }}</span>
+                @enderror
+            </div>
+        @endif
+    </div>
+
+    Caso o botao for apertado novamente o campo de adicionar arquivo deve desaparecer novamente
