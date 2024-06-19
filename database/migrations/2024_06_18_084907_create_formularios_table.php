@@ -28,7 +28,7 @@ class CreateFormulariosTable extends Migration
             $table->date('expedicao_rg')->nullable();
             $table->integer('crm')->nullable();
             $table->string('crm_estado')->nullable();  
-            $table->boolean('sexo')->nullable();  
+            $table->string('sexo')->nullable();  
             $table->string('pais_naturalidade')->nullable();  
             $table->string('estado_civil')->nullable();  
             $table->string('cep')->nullable();  
@@ -53,7 +53,7 @@ class CreateFormulariosTable extends Migration
             $table->string('documento_solicitacao_isencao')->nullable();
             $table->string('documento_provab')->nullable();
 
-
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

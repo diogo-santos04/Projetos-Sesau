@@ -64,6 +64,7 @@ class CrudFormComponent extends Component
             $this->emit('refreshCrudTable');
             $this->emit('closeFormCrud');
         } catch (\Exception $ex) {
+            dd($ex);
             session()->flash('message','Algo deu errado!!');
         }
     }

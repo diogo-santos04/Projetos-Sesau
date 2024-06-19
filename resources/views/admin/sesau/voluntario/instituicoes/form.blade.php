@@ -15,7 +15,7 @@
                     <div class="mb-4 col-4">
                             <input type="hidden" wire:model.defer="data.tipo_seguimento_id" class="form-control">
                             {{-- <livewire:admin.sesau.voluntario.select-component key="{{Str::random(5)}}" columnName="nome" columnId="id" title="Tipo Seguimento" model="App\Models\Admin\Sesau\Voluntario\TipoSeguimento" label="tipo_seguimento_id" value="{{ isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0' }}"/> --}}
-                            <livewire:admin.sesau.juridico.dropdown-component color="secondary"
+                            <livewire:admin.sesau.voluntario.dropdown-component color="secondary"
                                 key="{{ Str::random(5) }}" columnName="nome" columnId="id" titulo="Tipo Seguimento"
                                 model="App\Models\Admin\Sesau\Voluntario\TipoSeguimento" label="tipo_seguimento_id"
                                 value="{{ isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0' }}" />

@@ -3,13 +3,22 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '04da78ce3486b5f107dced6bf76736365d010bd1',
+        'reference' => 'b298ddf75f16a73e3ccbb921900520fa385a9e1d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'apalfrey/select2-bootstrap-5-theme' => array(
+            'pretty_version' => '1.3.0',
+            'version' => '1.3.0.0',
+            'reference' => 'ab448b2ac36a6f7f90b162e384ca2b1469a3cc1f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../apalfrey/select2-bootstrap-5-theme',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'asm89/stack-cors' => array(
             'pretty_version' => 'v2.2.0',
             'version' => '2.2.0.0',
@@ -460,7 +469,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '04da78ce3486b5f107dced6bf76736365d010bd1',
+            'reference' => 'b298ddf75f16a73e3ccbb921900520fa385a9e1d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

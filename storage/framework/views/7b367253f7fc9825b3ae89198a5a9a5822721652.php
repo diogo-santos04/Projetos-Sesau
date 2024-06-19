@@ -1,12 +1,20 @@
 <div class="row">
+    
     <div class="form-floating mb-4 col-12">
-        <select wire:model.prevent="data.tipo_inscricao" class="form-select">
-            <option value="">Selecione</option>
-            <option value="Residência Médica em Família e Comunidade">Residência Médica em Família e Comunidade</option>
-            <option value="Residência Médica em Psiquiatria ">Residência Médica em Psiquiatria</option>
-        </select>
-        <label for="select">1 - Inscrição para:* (pode selecionar as duas)</label>
+        <div class="dropdown d-grid gap-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                data-bs-auto-close="outside">
+                1 - Inscrição para:* (pode selecionar as duas)
+            </button>
+            <ul class="dropdown-menu p-4" style="width: 100%">
+                <label wire:ignore.self class="d-block" for="data.tipo_inscricao">
+                    <input class="radio_animated mt-2 mx-2" type="radio" value="Residência Médica em Família e Comunidade">Residência Médica em Família e Comunidade
+                    <input class="radio_animated mt-2 mx-2" type="radio" value="Residência Médica em Psiquiatria">Residência Médica em Psiquiatria
+                </label>
+            </ul>
+        </div>
     </div>
+
     <div class="form-floating mb-4 col-3">
         <input type="text" wire:model.prevent="data.nome" class="form-control">
         <label for="nome">2 - Nome Completo*</label>
@@ -95,7 +103,11 @@
     <div class="form-floating mb-4 col-3">
         <select wire:model.prevent="data.estado_civil" class="form-select">
             <option value="">Selecione</option>
-            <option value="solteiro">solteiro</option>
+            <option value="solteiro">Solteiro(a)</option>
+            <option value="casado">Casado(a)</option>
+            <option value="separado">Separado</option>
+            <option value="divorciado">Divorciado(a)</option>
+            <option value="viuvo">Viúvo(a)</option>
         </select>
         <label for="estadocivil">15 - Estado Civil*</label>
     </div>
@@ -142,7 +154,7 @@
     </div>
 
     <div class="form-floating mb-4 col-3">
-        <input type="text" wire:model.prevent="data.estado" class="form-control">
+        <input type="text" wire:model.prevent="data.endereco" class="form-control">
         <label for="estado">19 - Endereço*</label>
     </div>
     <div class="form-floating mb-4 col-3">
@@ -212,23 +224,17 @@
     </div>
     <div class="form-floating mb-3 col-12">
         <h6 class="form-floating mb-3 col-3">29 - Possui PROVAB*</h6>
-        <div class="row form-check form-switch">
-            <div class="mb-3">
-                <label for="provab" class="form-check-label">Sim</label>
-                <input type="checkbox" wire:model.prevent="data.provab" id="status" class="form-check-input">
-                <?php $__errorArgs = ['status'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                    <span class="error"><?php echo e($message); ?></span>
-                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-            </div>
+        
+        
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" wire:model.prevent="data.provab" type="radio" value="1">
+            <label class="form-check-label" for="">Sim</label>
         </div>
-        <?php if(!empty($data['provab'])): ?>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" wire:model.prevent="data.provab" type="radio" value="0">
+            <label class="form-check-label" for="">Não</label>
+        </div>
+        <?php if(!empty($data['provab']) && $data['provab'] == '1'): ?>
             <div class="form-floating m-1 col-12">
                 <input type="file" wire:model="data.documento_provab" class="form-control-file">
                 <?php $__errorArgs = ['data.documento_provab'];
@@ -247,16 +253,16 @@ unset($__errorArgs, $__bag); ?>
     <div class="form-floating mb-4 col-12">
         <select wire:model.prevent="data.tipo_vaga" class="form-select">
             <option value="">Selecione</option>
-            <option value="1">a. Negro</option>
-            <option value="2">b. Índio</option>
-            <option value="3">c. Pessoa com deficiência</option>
-            <option value="4">d. Ampla Concorrência</option>
-            
+            <option value="negro">a. Negro</option>
+            <option value="indio">b. Índio</option>
+            <option value="pessoa_deficiente">c. Pessoa com deficiência</option>
+            <option value="ampla_concorrencia">d. Ampla Concorrência</option>
         </select>
         <label for="tipo_vaga">30 - Vaga para*</label>
-        <?php if(!empty($data['tipo_vaga']) && $data['tipo_vaga'] == '4'): ?>
-            <div class="form-floating m-2 col-12">
-                <input type="file" wire:model="data.documento_ampla_concorrencia" class="form-control-file" id="documentoAmplaConcorrencia">
+        <?php if(!empty($data['tipo_vaga']) && $data['tipo_vaga'] == 'ampla_concorrencia'): ?>
+            <div class="form-floating m-2 col-2">
+                <input type="file" wire:model="data.documento_ampla_concorrencia" class="form-control-file"
+                    id="documentoAmplaConcorrencia">
                 <?php $__errorArgs = ['data.documento_ampla_concorrencia'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -270,30 +276,24 @@ unset($__errorArgs, $__bag); ?>
             </div>
         <?php endif; ?>
     </div>
-    <div class="form-floating mb-4 col-3">
+    <div class="form-floating mb-4 col-12">
         <input type="boolean" wire:model.prevent="data.leitura_edital" class="form-control">
         <label for="edital">31 - Leitura do Edital*</label>
     </div>
     <div class="form-floating mb-3 col-12">
         <h6 class="form-floating mb-3 col-3">32 - Solicitação de Isenção de Inscrição</h6>
-        <div class="row form-check form-switch">
-            <div class="mb-3">
-                <label for="solicitacao_isencao" class="form-check-label">Solicitar</label>
-                <input type="checkbox" wire:model.prevent="data.solicitacao_isencao" id="status"
-                    class="form-check-input">
-                <?php $__errorArgs = ['status'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                    <span class="error"><?php echo e($message); ?></span>
-                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-            </div>
+        
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" wire:model.prevent="data.solicitacao_isencao" type="radio"
+                name="inlineRadioOptions" id="inlineRadio1" value="1">
+            <label class="form-check-label" for="inlineRadio1">Sim</label>
         </div>
-        <?php if(!empty($data['solicitacao_isencao'])): ?>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" wire:model.prevent="data.solicitacao_isencao" type="radio"
+                name="inlineRadioOptions" id="inlineRadio2" value="0">
+            <label class="form-check-label" for="inlineRadio2">Não</label>
+        </div>
+        <?php if(!empty($data['solicitacao_isencao']) && $data['solicitacao_isencao'] == '1'): ?>
             <div class="form-floating m-1 col-12">
                 <input type="file" wire:model="data.documento_solicitacao_isencao" class="form-control-file">
                 <?php $__errorArgs = ['data.documento_solicitacao_isencao'];
@@ -318,13 +318,14 @@ unset($__errorArgs, $__bag); ?>
         <div class="row form-check form-switch">
             <div class="mb-2">
                 <label for="termo_aceitacao" class="form-check-label">Aceitar</label>
-                <input type="checkbox" wire:model="data.termo_aceitacao" id="status" class="form-check-input">
+                <input type="checkbox" wire:model="data.termo_aceitacao" id="termo_aceitacao"
+                    class="form-check-input">
                 <?php $__errorArgs = ['status'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                    <span class="error"><?php echo e($mssage); ?></span>
+                    <span class="error"><?php echo e($message); ?></span>
                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
