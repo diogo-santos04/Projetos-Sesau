@@ -35,14 +35,14 @@ unset($__errorArgs, $__bag); ?>
                             
                             <?php
 if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('admin.sesau.juridico.dropdown-component', ['color' => 'secondary','columnName' => 'nome','columnId' => 'id','titulo' => 'Tipo Seguimento','model' => 'App\Models\Admin\Sesau\Voluntario\TipoSeguimento','label' => 'tipo_seguimento_id','value' => ''.e(isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0').''])->html();
+    $html = \Livewire\Livewire::mount('admin.sesau.voluntario.dropdown-component', ['color' => 'secondary','columnName' => 'nome','columnId' => 'id','titulo' => 'Tipo Seguimento','model' => 'App\Models\Admin\Sesau\Voluntario\TipoSeguimento','label' => 'tipo_seguimento_id','value' => ''.e(isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0').''])->html();
 } elseif ($_instance->childHasBeenRendered(''.e(Str::random(5)).'')) {
     $componentId = $_instance->getRenderedChildComponentId(''.e(Str::random(5)).'');
     $componentTag = $_instance->getRenderedChildComponentTagName(''.e(Str::random(5)).'');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
     $_instance->preserveRenderedChild(''.e(Str::random(5)).'');
 } else {
-    $response = \Livewire\Livewire::mount('admin.sesau.juridico.dropdown-component', ['color' => 'secondary','columnName' => 'nome','columnId' => 'id','titulo' => 'Tipo Seguimento','model' => 'App\Models\Admin\Sesau\Voluntario\TipoSeguimento','label' => 'tipo_seguimento_id','value' => ''.e(isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0').'']);
+    $response = \Livewire\Livewire::mount('admin.sesau.voluntario.dropdown-component', ['color' => 'secondary','columnName' => 'nome','columnId' => 'id','titulo' => 'Tipo Seguimento','model' => 'App\Models\Admin\Sesau\Voluntario\TipoSeguimento','label' => 'tipo_seguimento_id','value' => ''.e(isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0').'']);
     $html = $response->html();
     $_instance->logRenderedChild(''.e(Str::random(5)).'', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
