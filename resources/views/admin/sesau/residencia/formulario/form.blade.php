@@ -1,12 +1,4 @@
 <div class="row">
-    {{-- <div class="form-floating mb-4 col-12">
-        <select wire:model.prevent="data.tipo_inscricao" id="multiple-select-field" class="form-select">
-            <option value="">Selecione</option>
-            <option value="Residência Médica em Família e Comunidade">Residência Médica em Família e Comunidade</option>
-            <option value="Residência Médica em Psiquiatria ">Residência Médica em Psiquiatria</option>
-        </select>
-        <label for="select">1 - Inscrição para:* (pode selecionar as duas)</label>
-    </div> --}}
     <div class="form-floating mb-4 col-12">
         <div class="dropdown d-grid gap-2">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
@@ -172,7 +164,7 @@
         <input type="number" wire:model.prevent="data.numero" class="form-control">
         <label for="numero">21 - Numero*</label>
     </div>
-    <div class="form-floating mb-4 col-3">
+    <div class="form-floating mb-4 col-12">
         <input type="text" wire:model.prevent="data.complemento" class="form-control">
         <label for="complemento">22 - Complemento</label>
     </div>
@@ -225,7 +217,7 @@
         <input type="text" wire:model.prevent="data.ocupacao_profissao" class="form-control">
         <label for="ocupacao_profissao">27 - Ocupação/Profissão*</label>
     </div>
-    <div class="form-floating mb-4 col-3">
+    <div class="form-floating mb-4 col-12">
         <input type="text" wire:model.prevent="data.curriculo" class="form-control">
         <label for="curriculo">28 - Currículo Lattes</label>
     </div>

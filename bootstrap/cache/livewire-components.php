@@ -21,6 +21,7 @@
   'admin.sesau.juridico.juridico-component' => 'App\\Http\\Livewire\\Admin\\Sesau\\Juridico\\JuridicoComponent',
   'admin.sesau.juridico.select-component' => 'App\\Http\\Livewire\\Admin\\Sesau\\Juridico\\SelectComponent',
   'admin.sesau.residencia.formulario-component' => 'App\\Http\\Livewire\\Admin\\Sesau\\Residencia\\FormularioComponent',
+  'admin.sesau.residencia.residente-component' => 'App\\Http\\Livewire\\Admin\\Sesau\\Residencia\\ResidenteComponent',
   'admin.sesau.samu.atendimento-component' => 'App\\Http\\Livewire\\Admin\\Sesau\\Samu\\AtendimentoComponent',
   'admin.sesau.samu.card-component' => 'App\\Http\\Livewire\\Admin\\Sesau\\Samu\\CardComponent',
   'admin.sesau.samu.modal-component' => 'App\\Http\\Livewire\\Admin\\Sesau\\Samu\\ModalComponent',
