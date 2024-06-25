@@ -1,5 +1,5 @@
 <div class="card p-4 mb-4">
-    <div class="card p-2 mb-4 bg-light">
+    <div class="card p-2 mb-4 bg-light" >
         <h5>{{ $title }}</h5>
     </div>
 

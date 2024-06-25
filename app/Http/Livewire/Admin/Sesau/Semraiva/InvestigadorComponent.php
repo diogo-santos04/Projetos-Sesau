@@ -19,18 +19,18 @@ class InvestigadorComponent extends Component
         return view('livewire.admin.sesau.semraiva.investigador-component');
     }
 
-    public function storeInvestigador(){
-        $this->validate([
-            'data.municipio_unidade_saude' => 'required',
-        ]);
+    // public function storeInvestigador(){
+    //     $this->validate([
+    //         'data.municipio_unidade_saude' => 'required',
+    //     ]);
 
-        try {
-            //dd($this->data);
-            $investigador = Investigador::create($this->data);
-        } catch (\Throwable $th) {
-            dd($th);
-            session()->flash('message',
-            'Não foi possível cadastrar/atualizar informação.');
-        }
-    }
+    //     try {
+    //         //dd($this->data);
+    //         $investigador = Investigador::create($this->data);
+    //     } catch (\Throwable $th) {
+    //         dd($th);
+    //         session()->flash('message',
+    //         'Não foi possível cadastrar/atualizar informação.');
+    //     }
+    // }
 }

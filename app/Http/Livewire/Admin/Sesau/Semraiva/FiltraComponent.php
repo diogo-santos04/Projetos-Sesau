@@ -15,7 +15,7 @@ class FiltraComponent extends Component
 
     public function render()
     {
-        return view('livewire.admin.sesau.semraiva.filtra-component',['unidades'=>Unidade::get()]);
+        return view('livewire.admin.sesau.semraiva.filtra-component');
     }
 
     public function updatedSearch($value){

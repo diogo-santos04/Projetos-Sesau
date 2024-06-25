@@ -12,10 +12,10 @@ class TabelaComponent extends Component
     public $controlePagina, $tabela = 0;
 
 
-    public function render()
-    {
-        return view('livewire.admin.sesau.semraiva.tabela-component',['fichas'=>Ficha::with('dado_geral')->get()]);
-    }
+    // public function render()
+    // {
+    //     return view('livewire.admin.sesau.semraiva.tabela-component',['fichas'=>Ficha::with('dado_geral')->get()]);
+    // }
 
     public function notificaTeste()
     {
@@ -23,8 +23,8 @@ class TabelaComponent extends Component
         //dd($this->teste);
     }
 
-    public function delete($id){
-        Ficha::find($id)->delete();
-    }
+    // public function delete($id){
+    //     Ficha::find($id)->delete();
+    // }
 
 }

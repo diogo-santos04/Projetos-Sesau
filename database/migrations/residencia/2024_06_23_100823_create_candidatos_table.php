@@ -34,6 +34,6 @@ class CreateCandidatosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('residenciacandidatos');
+        Schema::dropIfExists('residencia.candidatos');
     }
 }

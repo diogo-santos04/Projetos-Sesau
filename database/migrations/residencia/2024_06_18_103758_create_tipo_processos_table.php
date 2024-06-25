@@ -17,6 +17,8 @@ class CreateTipoProcessosTable extends Migration
             $table->id();
 
             $table->string('nome')->nullable();
+            $table->boolean('residencia_familia_comunidade')->default(true);
+            $table->boolean('residencia_psiquiatria')->default(false);
             $table->boolean('status')->default(false);
             
             $table->timestamps();

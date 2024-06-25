@@ -3,16 +3,16 @@
 <?php $__env->startSection('content'); ?>
     <?php
 if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('admin.sesau.residencia.formulario-component', [])->html();
-} elseif ($_instance->childHasBeenRendered('LKwKsEF')) {
-    $componentId = $_instance->getRenderedChildComponentId('LKwKsEF');
-    $componentTag = $_instance->getRenderedChildComponentTagName('LKwKsEF');
+    $html = \Livewire\Livewire::mount('admin.sesau.residencia.residente-component', [])->html();
+} elseif ($_instance->childHasBeenRendered('RPB8tNb')) {
+    $componentId = $_instance->getRenderedChildComponentId('RPB8tNb');
+    $componentTag = $_instance->getRenderedChildComponentTagName('RPB8tNb');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('LKwKsEF');
+    $_instance->preserveRenderedChild('RPB8tNb');
 } else {
-    $response = \Livewire\Livewire::mount('admin.sesau.residencia.formulario-component', []);
+    $response = \Livewire\Livewire::mount('admin.sesau.residencia.residente-component', []);
     $html = $response->html();
-    $_instance->logRenderedChild('LKwKsEF', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('RPB8tNb', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

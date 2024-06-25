@@ -40,16 +40,16 @@ class SemraivaTableComponent extends TableComponent
         $this->tableAction = false;
     }
 
-    public function columns()
-    {
-        if (method_exists($this->model, 'columns')) {
-            return app($this->model)::columns();
-        } else {
-            return [
-                Column::make('ID')->searchable()->sortable(),
-            ];
-        }
-    }
+    // public function columns()
+    // {
+    //     if (method_exists($this->model, 'columns')) {
+    //         return app($this->model)::columns();
+    //     } else {
+    //         return [
+    //             Column::make('ID')->searchable()->sortable(),
+    //         ];
+    //     }
+    // }
     
 
 }

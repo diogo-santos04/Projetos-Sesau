@@ -18,7 +18,7 @@ class DadoGeralComponent extends Component
     public $status = [];
     public $data = [];
     public $select, $outra, $outro;
-    public bool $editar;
+    // public bool $editar;
     public $updateLogin;
     public $closeFicha;
 
@@ -80,47 +80,47 @@ class DadoGeralComponent extends Component
             // Create Category
             //DadoGeral::create($this->data[];)
             //'nome', 'tipo', 'numero', 'observacao', 'status'
-            $ficha = Ficha::create([
-                'nome'=> "SINAN",
-                'tipo'=> "ATENDIMENTO ANTI-RÁBICO HUMANO",
-                'numero'=>123,
-                'observacao'=>'observacao',
-                'status'=>true
-            ]);
+            // $ficha = Ficha::create([
+            //     'nome'=> "SINAN",
+            //     'tipo'=> "ATENDIMENTO ANTI-RÁBICO HUMANO",
+            //     'numero'=>123,
+            //     'observacao'=>'observacao',
+            //     'status'=>true
+            // ]);
 
             //dd($ficha->id);
-            DadoGeral::create([
-                'ficha_id' => $ficha->id,
-                'tipo_notificacao'=>$this->data['tipo_notificacao'],
-                'agravo_doenca'=>$this->data['agravo_doenca'],
-                'codigo_cid'=>$this->data['codigo_cid'],
-                'uf'=>$this->data['uf'],
-                'municipio_notificacao'=>$this->data['municipio_notificacao'],
-                'codigo_ibge'=>$this->data['codigo_ibge'],
-                'data_atendimento'=>$this->data['data_atendimento'],        
-                'data_notificacao'=>$this->data['data_notificacao']
-            ]);
+            // DadoGeral::create([
+            //     'ficha_id' => $ficha->id,
+            //     'tipo_notificacao'=>$this->data['tipo_notificacao'],
+            //     'agravo_doenca'=>$this->data['agravo_doenca'],
+            //     'codigo_cid'=>$this->data['codigo_cid'],
+            //     'uf'=>$this->data['uf'],
+            //     'municipio_notificacao'=>$this->data['municipio_notificacao'],
+            //     'codigo_ibge'=>$this->data['codigo_ibge'],
+            //     'data_atendimento'=>$this->data['data_atendimento'],        
+            //     'data_notificacao'=>$this->data['data_notificacao']
+            // ]);
 
-            AntecedentesEpidemiologicos::create([
-                'ficha_id' => $ficha->id,                
-            ]);
+            // AntecedentesEpidemiologicos::create([
+            //     'ficha_id' => $ficha->id,                
+            // ]);
 
-            //RESTANTE DAS FICHAS
-            DadoResidencia::create([
-                'ficha_id' => $ficha->id,                
-            ]);
+            // //RESTANTE DAS FICHAS
+            // DadoResidencia::create([
+            //     'ficha_id' => $ficha->id,                
+            // ]);
 
-            TratamentoAtual::create([
-                'ficha_id' => $ficha->id,                
-            ]);
+            // TratamentoAtual::create([
+            //     'ficha_id' => $ficha->id,                
+            // ]);
 
-            Investigador::create([
-                'ficha_id' => $ficha->id,                
-            ]);
+            // Investigador::create([
+            //     'ficha_id' => $ficha->id,                
+            // ]);
            
          
-            $this->emit('closeFicha', ($ficha->id));          
-            session()->flash('success','Login Created Successfully!!');
+            // $this->emit('closeFicha', ($ficha->id));          
+            // session()->flash('success','Login Created Successfully!!');
             
             
         }catch(\Exception $e){
@@ -137,18 +137,18 @@ class DadoGeralComponent extends Component
     public function edit($id){       
       
 
-        $ficha = Ficha::findOrFail($id);
-        $this->fichaId = $ficha->id;
-        $this->dadoGeralId = $ficha->dado_geral->id;
-        $this->data['ficha_id'] = $id;
-        $this->data['tipo_notificacao'] = $ficha->dado_geral->tipo_notificacao;
-        $this->data['agravo_doenca'] = $ficha->dado_geral->agravo_doenca;
-        $this->data['codigo_cid'] = $ficha->dado_geral->codigo_cid;
-        $this->data['uf'] = $ficha->dado_geral->uf;
-        $this->data['municipio_notificacao'] = $ficha->dado_geral->municipio_notificacao;
-        $this->data['codigo_ibge'] = $ficha->dado_geral->codigo_ibge;
-        $this->data['data_atendimento'] = $ficha->dado_geral->data_atendimento;
-        $this->data['data_notificacao'] = $ficha->dado_geral->data_notificacao;
+        // $ficha = Ficha::findOrFail($id);
+        // $this->fichaId = $ficha->id;
+        // $this->dadoGeralId = $ficha->dado_geral->id;
+        // $this->data['ficha_id'] = $id;
+        // $this->data['tipo_notificacao'] = $ficha->dado_geral->tipo_notificacao;
+        // $this->data['agravo_doenca'] = $ficha->dado_geral->agravo_doenca;
+        // $this->data['codigo_cid'] = $ficha->dado_geral->codigo_cid;
+        // $this->data['uf'] = $ficha->dado_geral->uf;
+        // $this->data['municipio_notificacao'] = $ficha->dado_geral->municipio_notificacao;
+        // $this->data['codigo_ibge'] = $ficha->dado_geral->codigo_ibge;
+        // $this->data['data_atendimento'] = $ficha->dado_geral->data_atendimento;
+        // $this->data['data_notificacao'] = $ficha->dado_geral->data_notificacao;
         // DD($this->data, $this->fichaId,$this->dadoGeralId,$ficha);
 
 
@@ -168,29 +168,29 @@ class DadoGeralComponent extends Component
             'data.tipo_notificacao' => 'required',
         ]);
 
-        try{
-        //    DD($this->data, $this->fichaId,$this->dadoGeralId);
-            DadoGeral::find($this->dadoGeralId)->fill([
-                'tipo_notificacao'=>$this->data['tipo_notificacao'],
-                'agravo_doenca'=>$this->data['agravo_doenca'],
-                'codigo_cid'=>$this->data['codigo_cid'],
-                'uf'=>$this->data['uf'],
-                'municipio_notificacao'=>$this->data['municipio_notificacao'],
-                'codigo_ibge'=>$this->data['codigo_ibge'],
-                'data_atendimento'=>$this->data['data_atendimento'],        
-                'data_notificacao'=>$this->data['data_notificacao']
-            ])->save();
+        // try{
+        // //    DD($this->data, $this->fichaId,$this->dadoGeralId);
+        //     DadoGeral::find($this->dadoGeralId)->fill([
+        //         'tipo_notificacao'=>$this->data['tipo_notificacao'],
+        //         'agravo_doenca'=>$this->data['agravo_doenca'],
+        //         'codigo_cid'=>$this->data['codigo_cid'],
+        //         'uf'=>$this->data['uf'],
+        //         'municipio_notificacao'=>$this->data['municipio_notificacao'],
+        //         'codigo_ibge'=>$this->data['codigo_ibge'],
+        //         'data_atendimento'=>$this->data['data_atendimento'],        
+        //         'data_notificacao'=>$this->data['data_notificacao']
+        //     ])->save();
             
             session()->flash('success','Produto Updated Successfully!!');
             $this->edit($this->fichaId);          
             // $this->data['ficha_id'] = null;
             
             // $this->cancel();
-        }catch(\Exception $e){
-            dd($e);
-            session()->flash('error','Something goes wrong while updating category!!');
-            $this->cancel();
-        }
+        // }catch(\Exception $e){
+        //     dd($e);
+        //     session()->flash('error','Something goes wrong while updating category!!');
+        //     $this->cancel();
+        // }
     }
     
     // public function destroy($id){
