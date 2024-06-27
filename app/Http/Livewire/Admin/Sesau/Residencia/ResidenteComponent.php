@@ -8,6 +8,7 @@ class ResidenteComponent extends Component
 {
     public $tipoProcesso;
     public $openCategoria, $openForm,$openTipoProcesso;
+    public $openCadastro = true;
     public $dados = [];
     public $nome,$email,$cpf,$celular,$nome_social,$value,$categoriaSelecionada;
     protected $listeners = [
@@ -26,16 +27,19 @@ class ResidenteComponent extends Component
     public function openCategoria()
     {
         $this->openCategoria = true;
+        $this->openCadastro = false;
     }
 
     public function openForm()
     {
         $this->openForm = true;
+        $this->openCategoria = false;
     }
 
     public function openTipoProcesso()
     {
         $this->openTipoProcesso = true;
+        $this->openForm = false;
     }
 
     public function dadosEnviados($dados)
