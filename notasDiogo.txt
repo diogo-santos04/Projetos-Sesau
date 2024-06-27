@@ -111,9 +111,3 @@ php artisan make:model Admin/Sesau/Residencia/Inscricao
 php artisan make:model Admin/Sesau/Residencia/Candidato
 php artisan make:model Admin/Sesau/Residencia/Residencia -m
 
-quando o usuario clicar no botao inscrever-se preciso que apareça o botao de inscrito
- <button type="button" wire:model.prevent='data.residencia_familia_comunidade' class="btn btn-success">Inscrever-se</button>
-                @if ()
-                    <button type="button" class="btn btn-success">INSCRITO</button>
-                @endif
-

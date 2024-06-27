@@ -4,14 +4,14 @@
                     <div class="card p-2 mb-4 bg-light border-dark">
                         <?php
 if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('admin.crud.crud-component', ['formType' => 'form','title' => 'Inscrições Residencia Médica','model' => 'App\Models\Admin\Sesau\Residencia\Formulario','form' => 'admin.sesau.residencia.formulario.form'])->html();
+    $html = \Livewire\Livewire::mount('admin.sesau.residencia.crud-form-component', ['formType' => 'form','title' => 'Inscrições Residencia Médica','model' => 'App\Models\Admin\Sesau\Residencia\Formulario','form' => 'admin.sesau.residencia.formulario.form'])->html();
 } elseif ($_instance->childHasBeenRendered(''.e(Str::random(5)).'')) {
     $componentId = $_instance->getRenderedChildComponentId(''.e(Str::random(5)).'');
     $componentTag = $_instance->getRenderedChildComponentTagName(''.e(Str::random(5)).'');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
     $_instance->preserveRenderedChild(''.e(Str::random(5)).'');
 } else {
-    $response = \Livewire\Livewire::mount('admin.crud.crud-component', ['formType' => 'form','title' => 'Inscrições Residencia Médica','model' => 'App\Models\Admin\Sesau\Residencia\Formulario','form' => 'admin.sesau.residencia.formulario.form']);
+    $response = \Livewire\Livewire::mount('admin.sesau.residencia.crud-form-component', ['formType' => 'form','title' => 'Inscrições Residencia Médica','model' => 'App\Models\Admin\Sesau\Residencia\Formulario','form' => 'admin.sesau.residencia.formulario.form']);
     $html = $response->html();
     $_instance->logRenderedChild(''.e(Str::random(5)).'', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }

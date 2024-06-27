@@ -8,9 +8,16 @@ use App\Models\Admin\Sesau\Residencia\TipoProcesso;
 
 class TipoProcessoComponent extends Component
 {
-    public $data;
-    public $tipoProcesso;
+    public $data = [
+        'residencia_multiprofissional_saude_mental' => false,
+        'residencia_multiprofissional_saude_familia' => false,
+        'residencia_medica_psiquiatria' => false,
+        'residencia_familia_comunidade' => false,
+    ];
+    public $tipoProcesso,$inscrito,$categoria;
     public $isInscrito;
+
+    protected $listeners=['categoria'];
 
     public function render()
     {
@@ -26,17 +33,6 @@ class TipoProcessoComponent extends Component
         try {
 
             $tipoProcesso = TipoProcesso::create($this->data);
-            // $this->emit('openTipoProcesso');
-            // $this->emit(
-            //     'enviarDados',
-            //     [
-            //         'nome' => $this->data['nome'],
-            //         'nome_social' => $this->data['nome_social'],
-            //         'celular' => $this->data['celular'],
-            //         'email'=> $this->data['email'],
-            //         'cpf'=> $this->data['cpf'],
-            //     ]
-            // );
             session()->flash('message', '');
         } catch (\Throwable $th) {
             dd($th);
@@ -47,9 +43,14 @@ class TipoProcessoComponent extends Component
         }
     }
 
-    public function inscrito()
+    public function categoria($value)
     {
-        $this->data['residencia_familia_comunidade'] = true;
+        $this->categoria = $value;
     }
     
+    public function inscrever($value)
+    {
+        $this->data[$value] =  !$this->data[$value];
+        $this->emit('tipoProcesso', $this->data[$value]);
+    }
 }

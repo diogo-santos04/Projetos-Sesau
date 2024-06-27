@@ -23,7 +23,7 @@ class CandidatoComponent extends Component
         try {
 
             $candidato = Candidato::create($this->data);
-            $this->emit('openTipoProcesso');
+            $this->emit('openCategoria');
             $this->emit(
                 'enviarDados',
                 [
